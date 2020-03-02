@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -17,12 +19,12 @@ class Project
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string")
      */
     private $name;
 
     /**
-     * @ORM\Column(type="string", length=2555)
+     * @ORM\Column(type="text", nullable=true)
      */
     private $description;
 
@@ -32,9 +34,21 @@ class Project
     private $date;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", nullable=true)
      */
-    private $skills;
+    private $imageFilename;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Skill", inversedBy="projects")
+     */
+    private $skill;
+
+    public function __construct()
+    {
+        $this->skill = new ArrayCollection();
+    }
+
+
 
     public function getId(): ?int
     {
@@ -58,7 +72,7 @@ class Project
         return $this->description;
     }
 
-    public function setDescription(string $description): self
+    public function setDescription(string $description = null): self
     {
         $this->description = $description;
 
@@ -73,19 +87,46 @@ class Project
     public function setDate(\DateTimeInterface $date): self
     {
         $this->date = $date;
+        return $this;
+    }
+
+    public function getImageFilename(): ?string
+    {
+        return $this->imageFilename;
+    }
+
+    public function setImageFilename(string $imageFilename = null): self
+    {
+        $this->imageFilename = $imageFilename;
 
         return $this;
     }
 
-    public function getSkills(): ?string
+    /**
+     * @return Collection|Skill[]
+     */
+    public function getSkill(): Collection
     {
-        return $this->skills;
+        return $this->skill;
     }
 
-    public function setSkills(string $skills): self
+    public function addSkill(Skill $skill): self
     {
-        $this->skills = $skills;
+        if (!$this->skill->contains($skill)) {
+            $this->skill[] = $skill;
+        }
 
         return $this;
     }
+
+    public function removeSkill(Skill $skill): self
+    {
+        if ($this->skill->contains($skill)) {
+            $this->skill->removeElement($skill);
+        }
+
+        return $this;
+    }
+
+   
 }

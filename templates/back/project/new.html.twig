@@ -1,0 +1,15 @@
+
+{% extends 'base.html.twig' %}
+{% block title %}Nouveau Projet{% endblock %}
+
+{% block body %}
+<h1>Nouveau Projet</h1>
+
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+
+<button class="btn btn-primary" type="submit">Sauvegarder</button>
+<a class="btn btn-primary" href="{{ path('app_back_admin_project') }}">Revenir au Menu principal</a>
+{{ form_end(form) }}
+
+{% endblock %}

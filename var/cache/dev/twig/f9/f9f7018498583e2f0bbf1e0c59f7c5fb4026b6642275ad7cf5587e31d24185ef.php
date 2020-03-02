@@ -52,31 +52,31 @@ class __TwigTemplate_7edbaac7fec7f30e0a6488b6dcca32e6f070e6406ebd032b67133235ea2
         ";
         // line 4
         $this->displayBlock('head_css', $context, $blocks);
-        // line 5
+        // line 9
         echo "        
         <meta charset=\"UTF-8\">
         <title>";
-        // line 7
+        // line 11
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
         ";
-        // line 8
+        // line 12
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 9
+        // line 13
         echo "    </head>
     <body>
         ";
-        // line 11
+        // line 15
         $this->displayBlock('body', $context, $blocks);
-        // line 12
+        // line 16
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 13
+        // line 17
         echo "
         ";
-        // line 14
+        // line 18
         $this->displayBlock('head_js', $context, $blocks);
-        // line 19
+        // line 23
         echo "    </body>
 </html>
 
@@ -101,7 +101,11 @@ class __TwigTemplate_7edbaac7fec7f30e0a6488b6dcca32e6f070e6406ebd032b67133235ea2
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "head_css"));
 
-        echo "<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css\" integrity=\"sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO\" crossorigin=\"anonymous\">";
+        // line 5
+        echo "        <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css\" integrity=\"sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO\" crossorigin=\"anonymous\">
+        <link rel=\"stylesheet\" href=\"//cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css\">
+        
+        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -110,7 +114,7 @@ class __TwigTemplate_7edbaac7fec7f30e0a6488b6dcca32e6f070e6406ebd032b67133235ea2
 
     }
 
-    // line 7
+    // line 11
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -129,7 +133,7 @@ class __TwigTemplate_7edbaac7fec7f30e0a6488b6dcca32e6f070e6406ebd032b67133235ea2
 
     }
 
-    // line 8
+    // line 12
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -147,7 +151,7 @@ class __TwigTemplate_7edbaac7fec7f30e0a6488b6dcca32e6f070e6406ebd032b67133235ea2
 
     }
 
-    // line 11
+    // line 15
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -165,7 +169,7 @@ class __TwigTemplate_7edbaac7fec7f30e0a6488b6dcca32e6f070e6406ebd032b67133235ea2
 
     }
 
-    // line 12
+    // line 16
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -183,7 +187,7 @@ class __TwigTemplate_7edbaac7fec7f30e0a6488b6dcca32e6f070e6406ebd032b67133235ea2
 
     }
 
-    // line 14
+    // line 18
     public function block_head_js($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -193,7 +197,7 @@ class __TwigTemplate_7edbaac7fec7f30e0a6488b6dcca32e6f070e6406ebd032b67133235ea2
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "head_js"));
 
-        // line 15
+        // line 19
         echo "            <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>
             <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js\" integrity=\"sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49\" crossorigin=\"anonymous\"></script>
             <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js\" integrity=\"sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy\" crossorigin=\"anonymous\"></script>
@@ -213,7 +217,7 @@ class __TwigTemplate_7edbaac7fec7f30e0a6488b6dcca32e6f070e6406ebd032b67133235ea2
 
     public function getDebugInfo()
     {
-        return array (  197 => 15,  187 => 14,  169 => 12,  151 => 11,  133 => 8,  114 => 7,  95 => 4,  80 => 19,  78 => 14,  75 => 13,  72 => 12,  70 => 11,  66 => 9,  64 => 8,  60 => 7,  56 => 5,  54 => 4,  49 => 1,);
+        return array (  201 => 19,  191 => 18,  173 => 16,  155 => 15,  137 => 12,  118 => 11,  105 => 5,  95 => 4,  80 => 23,  78 => 18,  75 => 17,  72 => 16,  70 => 15,  66 => 13,  64 => 12,  60 => 11,  56 => 9,  54 => 4,  49 => 1,);
     }
 
     public function getSourceContext()
@@ -221,7 +225,11 @@ class __TwigTemplate_7edbaac7fec7f30e0a6488b6dcca32e6f070e6406ebd032b67133235ea2
         return new Source("<!DOCTYPE html>
 <html>
     <head>
-        {% block head_css %}<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css\" integrity=\"sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO\" crossorigin=\"anonymous\">{% endblock %}
+        {% block head_css %}
+        <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css\" integrity=\"sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO\" crossorigin=\"anonymous\">
+        <link rel=\"stylesheet\" href=\"//cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css\">
+        
+        {% endblock %}
         
         <meta charset=\"UTF-8\">
         <title>{% block title %}Welcome!{% endblock %}</title>

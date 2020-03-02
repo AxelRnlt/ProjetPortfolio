@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste Compétences
+{% endblock %}
+
+{% block body %}
+	<h1>Liste des Compétences</h1>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Nom</th>
+				<th>Catégorie</th>
+				<th>Icône</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			{% for skill in skills %}
+				<tr>
+					<td>{{ skill.name }}</td>
+					<td>{{ skill.category }}</td>
+					<td class="icon-table">
+						<i class="mdi mdi-{{skill.linkImg}}"></i>
+					</td>
+					<td>
+						<a class="btn btn-success btn-sm" href="{{ path('app_back_admin_skill_print', {'id': skill.id}) }}">
+							<i class="mdi mdi-file-find"></i>
+							Afficher
+						</a>
+						<a class="btn btn-primary btn-sm" href="{{ path('app_back_admin_skill_edit', {'id': skill.id}) }}">
+							<i class="mdi mdi-pencil"></i>
+							Editer
+						</a>
+						{{ include('back/skill/_delete.html.twig') }}
+						<button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal{{ skill.id }}">
+							<i class="mdi mdi-delete"></i>
+							Supprimer
+						</button>
+
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="5">Aucune compétence présente.</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+	<a class="btn btn-primary" href="{{ path('app_back_admin_skill_create') }}">
+		<i class="mdi mdi-content-save"></i>
+		Créer nouvelle compétence
+	</a>
+	<a class="btn btn-primary" href="{{ path('app_back_admin') }}">Retour</a>
+
+{% endblock %}

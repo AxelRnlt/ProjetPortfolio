@@ -122,11 +122,11 @@ class __TwigTemplate_8dc9f499822017afd403b1e5002558754d818e88801c9042a1a3fe138e3
         <li><a href=\"";
         // line 18
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_project");
-        echo "\">Projet</a></li>
+        echo "\">Projets</a></li>
         <li><a href=\"";
         // line 19
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_skill");
-        echo "\">Compétence</a></li>
+        echo "\">Compétences</a></li>
         <li><a href=\"";
         // line 20
         echo "\">Informations</a></li>
@@ -181,8 +181,8 @@ class __TwigTemplate_8dc9f499822017afd403b1e5002558754d818e88801c9042a1a3fe138e3
         </div>   
     {% endif %} 
         <ul>
-        <li><a href=\"{{ path('app_admin_project') }}\">Projet</a></li>
-        <li><a href=\"{{ path('app_admin_skill') }}\">Compétence</a></li>
+        <li><a href=\"{{ path('app_admin_project') }}\">Projets</a></li>
+        <li><a href=\"{{ path('app_admin_skill') }}\">Compétences</a></li>
         <li><a href=\"{# {{ path('app_admin_info') }} #}\">Informations</a></li>
         <li><a href=\"{{ path('app_logout') }}\">Se déconnecter</a></li>
         </ul> 

@@ -20,7 +20,6 @@ class UserFixtures extends Fixture
 
     public function load(ObjectManager $manager)
     {
-        
         $u = new User();
         $u->setEmail('testencoder2@gmail.com');
         $u->setRoles(['ROLE_ADMIN']);
@@ -38,8 +37,8 @@ class UserFixtures extends Fixture
         $u->setCity('VilleTest');
         $u->setTelephone('0781517131');
         $manager->persist($u);
-
-        $manager->flush();
+        $manager->flush(); 
+        
         /*
         https://symfony.com/doc/4.0/security/entity_provider.html
         https://symfony.com/doc/4.4/testing/database.html#mocking-a-doctrine-repository-in-unit-tests

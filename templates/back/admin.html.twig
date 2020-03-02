@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page Admin
+{% endblock %}
+
+{% block body %}
+
+	<form method="post">
+
+		{% if app.user %}
+			<div class="mb-3">
+				Connecté en tant que :
+				{{ app.user.email }},
+				<br>
+				Nom:
+				{{ app.user.firstname }}
+				{{ app.user.name }},
+				<br>
+				Autres :
+				{{ app.user.telephone }}
+				-
+				{{ app.user.address }}
+				-
+				{{ app.user.city }},
+
+			</div>
+		{% endif %}
+		<ul>
+			<li>
+				<a href="{{ path('app_back_admin_project') }}">Projets</a>
+			</li>
+			<li>
+				<a href="{{ path('app_back_admin_skill') }}">Compétences</a>
+			</li>
+			<li>
+				<a href="{# {{ path('app_back_admin_info') }} #}">Veilles</a>
+				{# <ul>
+					<li>Informatique</li>
+					<li>Juridique</li>
+				</ul> #}
+			</li>
+			<li>
+				<a href="{{ path('app_logout') }}">Se déconnecter</a>
+			</li>
+		</ul>
+
+
+	</form>
+{% endblock %}

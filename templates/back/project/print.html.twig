@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Projet{{ project.name }}
+{% endblock %}
+
+{% block body %}
+	{# 
+		{{ include('project/_delete.html.twig') }} #}
+
+	<h1>Projet
+		{{project.name}}</h1>
+
+	<table class="table">
+		<tbody>
+			<tr>
+				<th>Id</th>
+				<td>{{ project.id }}</td>
+			</tr>
+			<tr>
+				<th>Nom</th>
+				<td>{{ project.name }}</td>
+			</tr>
+			<tr>
+				<th>Description</th>
+				<td>{{ project.description|raw }}</td>
+			</tr>
+			<tr>
+				<th>Date</th>
+				<td>{{ project.date|date('m Y') }}</td>
+			</tr>
+			<tr>
+				<th>Nom de l'Image</th>
+				<td>{{ project.imageFilename }}</td>
+			</tr>
+			<tr>
+				<th>Image liée</th>
+				<td>
+					<a href="{{ asset('uploads/images/' ~ project.imageFilename) }}"><img src="{{ asset('uploads/images/' ~ project.imageFilename) }}"></a>
+				</td>
+			</tr>
+			<tr>
+				<th>Compétences obtenues</th>
+				<td>
+					{% for project in project.skill %}
+						<i id="skillPrint" class="mdi mdi-{{ project.linkImg }}"></i>
+				{% else %}
+					<tr>
+						<td colspan="5">Aucune compétence présente.</td>
+					</tr>
+				{% endfor %}
+			</tr>
+		</tbody>
+	</td>
+</tr></tbody></table><a class="btn btn-primary" href="{{ path('app_back_admin_project') }}">Retour</a><a class="btn btn-primary" href="{{ path('app_back_admin_project_edit', {'id': project.id}) }}">Editer</a>{{ include('back/project/_delete.html.twig') }}<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal{{ project.id }}"><i class="mdi mdi-delete"></i>Supprimer</button></form>{% endblock %}

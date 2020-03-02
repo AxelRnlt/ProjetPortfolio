@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Compétence {{ skill.name }}{% endblock %}
+
+{% block body %}
+
+{{ include('back/skill/_delete.html.twig') }}
+
+    <h1>Compétence {{skill.name}}</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ skill.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ skill.name }}</td>
+            </tr>
+            <tr>
+                <th>Catégorie</th>
+                <td>{{ skill.category }}</td>
+            </tr>
+            <tr>
+                <th>Icône</th>
+                <td><span class="mdi mdi-{{skill.linkImg}}"></span></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_back_admin_skill') }}">Retour</a>
+
+    <a href="{{ path('app_back_admin_skill_edit', {'id': skill.id}) }}">Editer</a>
+        
+    {{ include('back/skill/_delete.html.twig') }}
+    
+    {# <button class="btn">Supprimer</button> #}
+</form>
+
+{% endblock %}

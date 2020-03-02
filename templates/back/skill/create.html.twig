@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvelle Compétence
+{% endblock %}
+
+{% block body %}
+
+</script>
+
+
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+
+
+ {# {{ include('skill/_form.html.twig') }} #}
+
+<button class="btn btn-primary" type="submit">Sauvegarder</button>
+<a class="btn btn-primary" href="{{ path('app_back_admin_skill') }}">Revenir à la liste</a>
+<a class="btn btn-primary" href="{{ path('app_back_admin') }}">Revenir au Menu principal</a>
+{{ form_end(form) }}
+
+{% endblock %}

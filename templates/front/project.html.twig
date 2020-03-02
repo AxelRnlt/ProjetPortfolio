@@ -1,0 +1,22 @@
+{% extends 'front/front.html.twig' %}
+
+{% block title %}Projets
+{% endblock %}
+
+{% block content %}
+	<div class="projects">
+		{% for project in projects %}
+			<div class="project">
+				<img src="{{ asset('uploads/images/' ~ project.imageFilename) }}" alt="">
+				<div class="info-project">
+					<div class="name-project">
+						{{ project.name }}
+					</div>
+					<div class="desc-project">
+						{{ project.description|raw }}
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+{% endblock %}

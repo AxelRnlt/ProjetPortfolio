@@ -3,31 +3,24 @@
 #    controller: App\Controller\DefaultController::index
 
 controllers:
-    resource: '../src/Controller/'
+    resource: '../src/Controller'
     type:     annotation
 
-account:
-    path: /login
-    controller: App\Controller\SecurityController::login
-    methods: GET|POST
+
+
+
+#images_print:
 
 #exemple
-nombre2:
-    path: /nombre2/{max}
-    controller: App\Controller\ChanceController::nombre2
-    methods: GET
+#nombre2:
+    #path: /nombre2/{max}
+    #controller: App\Controller\ChanceController::nombre2
+    #methods: GET
     
 #nombre_show:
 #    path: /nombre/{slug}
 #    controller: App\Controller\ChanceController::show
 
-nombre_list: #Ou suppresion de requirements et ajout de \d+ dans le path: /nombre/{page<\d+>}
-    path: /nombre/{page}  
-    controller: App\Controller\ChanceController::list
-    #defaults: Exemple possible
-        #page: 1
-    requirements:
-        page: '\d+'
 
 #nombre_random:
 #    -> (chemin) path: /nombre

@@ -1,0 +1,93 @@
+.intro {
+    background-color: #ffffff;
+    height: 100%;
+    flex: 0 0 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    color: #5c5b5b;
+}
+
+.fond {
+    height: 100%;
+    width: 100%;
+    background-image: url('../../../public/res/horloge.jpeg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.intro-description {
+    color: #aaaaaa;
+}
+
+.intro h1 {
+    font-family: 'Barlow', sans-serif;
+    font-size: 60px;
+    font-weight: bold;
+    margin-top: 0;
+    line-height: 0.8;
+    margin-bottom: 20px;
+}
+
+.intro-social-networks-menu {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    list-style: none;
+}
+
+.intro-social-networks-menu li {
+    letter-spacing: 2px;
+    font-size: 11px;
+    display: inline-block;
+    margin-right: 10px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.intro-social-networks-menu li:last-child {
+    margin-right: 0;
+}
+
+.intro-social-networks-menu li a {
+    padding: 4px;
+    border: 1px solid transparent;
+    transition-duration: 1s;
+}
+
+.intro-social-networks-menu li a:hover{
+    border-radius: 50px;
+    border-color: #5c5b5b;
+    background-color: #aaaaaa;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .intro {
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.5);
+        text-align: center;
+        color: #ffffff;
+    }
+    
+    .intro-description {
+        color: inherit;
+    }  
+
+    .intro-social-networks-menu {
+        flex-direction: column;
+    }
+
+    .intro-social-networks-menu li {
+        margin-right: 0;
+    }
+
+    .intro-social-networks-menu li a {
+        color: #ffffff;
+        font-weight: bold;
+    }
+}

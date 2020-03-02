@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('front') }}
+			<link href="https://fonts.googleapis.com/css?family=Barlow:400,700|PT+Sans|PT+Sans+Narrow:400,700&display=swap" rel="stylesheet">
+		{% endblock %}
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}{% endblock %}
+		</title>
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<div class="menu">
+				<ul class="items-menu">
+					<li>
+						<a href="{{ path('app_front_home_home') }}">Accueil</a>
+					</li>
+					<li>
+						<a href="{{ path('app_front_project_projects') }}">Projets</a>
+					</li>
+					<li>
+						<a href="#">Veilles</a>
+					</li>
+					<li>
+						<a href="#">A Propos</a>
+					</li>
+					<li>
+						<a href="#">Contact</a>
+					</li>
+				</ul>
+			</div>
+
+			<div class="content"> 
+				{% block content %}{% endblock %}
+			</div>
+		</div>
+		{% block javascripts %}
+			{{ encore_entry_script_tags('front') }}
+		{% endblock %}
+	</body>
+</html>

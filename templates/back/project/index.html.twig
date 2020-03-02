@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste Projets
+{% endblock %}
+
+{% block body %}
+	<h1>Liste des Projets</h1>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Nom</th>
+				<th>Description</th>
+				<th>Date</th>
+				<th>Compétences</th>
+				<th>Image</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			{% for project in projects %}
+				<tr>
+					<td>{{ project.name }}</td>
+					<td>{{ project.description|raw }}</td>
+					<td>{{ project.date|date('m Y') }}</td>
+					<td>
+						{% for project in project.skill %}
+							<i id="skillPrint" class="mdi mdi-{{ project.linkImg }}"></i>
+						{% endfor %}
+					</td>
+					<td class="print-img">
+						<a href="{{ asset('uploads/images/' ~ project.imageFilename) }}"><img src="{{ asset('uploads/images/' ~ project.imageFilename) }}"></a>
+					</td>
+					<td>
+						<a class="btn btn-success btn-sm" href="{{ path('app_back_admin_project_print', {'id': project.id}) }}">
+							<i class="mdi mdi-file-find"></i>
+							Afficher
+						</a>
+						<a class="btn btn-primary btn-sm" href="{{ path('app_back_admin_project_edit', {'id': project.id}) }}">
+							<i class="mdi mdi-pencil"></i>
+							Editer
+						</a>
+						{{ include('back/project/_delete.html.twig') }}
+						<button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal{{ project.id }}">
+							<i class="mdi mdi-delete"></i>
+							Supprimer
+						</button>
+						{{ include('back/project/_deleteImage.html.twig') }}
+						<button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteImageModal{{ project.id }}">
+							<i class="mdi mdi-delete"></i>
+							Supprimer l'image
+						</button>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="5">Aucun Projet présent.</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+	<a class="btn btn-primary" href="{{ path('app_back_admin_project_new') }}">
+		<i class="mdi mdi-content-save"></i>
+		Créer un nouveau Projet
+	</a>
+	<a class="btn btn-primary" href="{{ path('app_back_admin') }}">Retour</a>
+
+{% endblock %}
